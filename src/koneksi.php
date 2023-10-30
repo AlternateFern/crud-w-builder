@@ -24,12 +24,6 @@ $capsule->setEventDispatcher(new Dispatcher(new Container));
 // Make this Capsule instance available globally via static methods... (optional)
 $capsule->setAsGlobal();
 
-// $users = Capsule::table('masyarakat')->get();
-
-try {
-} catch (Exception $e) {
-    var_dump($e->getMessage());
-    die();
+function DB($table) {
+    return Capsule::table($table);
 }
-
-var_dump($users);
