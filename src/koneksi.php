@@ -11,7 +11,7 @@ $capsule = new Capsule;
 $capsule->addConnection([
     'driver' => 'mysql',
     'host' => 'localhost',
-    'database' => 'belajar_laravel',
+    'database' => 'db_siswa',
     'username' => 'root',
     'password' => '',
     'charset' => 'utf8',
