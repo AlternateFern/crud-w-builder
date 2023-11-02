@@ -11,7 +11,7 @@ $datas = DB("siswa")->get();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Read</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
@@ -19,7 +19,7 @@ $datas = DB("siswa")->get();
     <div class="container py-4">
         <h2>Students</h2>
 
-        <a href="" class="btn btn-primary fw-bold">Create</a>
+        <a href="create.php" class="btn btn-primary fw-bold">Create</a>
         <table class="table">
             <thead>
                 <tr>
@@ -34,12 +34,13 @@ $datas = DB("siswa")->get();
             <tbody>
                 <?php foreach ($datas as $data) : ?>
                     <tr>
-                        <th scope="row">1</th>
+                        <th scope="row"><?= $data->id ?></th>
                         <td><?= $data->nis ?></td>
                         <td><?= $data->nama ?></td>
                         <td><?= $data->kelas ?></td>
                         <td><?= $data->jurusan ?></td>
-                        <td><a class="btn btn-sm btn-warning" href="edit.php?id=<?= $data->id ?>">Edit</a></td>
+                        <td><a class="btn btn-sm btn-warning" href="edit.php?id=<?= $data->id ?>">Edit</a>
+                        <a class="btn btn-sm btn-danger" href="delete.php?id=<?= $data->id ?>">Delete</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
