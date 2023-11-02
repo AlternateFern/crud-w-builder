@@ -10,6 +10,4 @@
     DB('siswa')->where('id', $id)->delete();
     
     echo "Record deleted <a href='read.php'>Back</a>";
-
-
 ?>
